@@ -19,7 +19,7 @@
             letter-spacing: 1px;
         }
         .hero-gradient {
-            background: linear-gradient(180deg, rgba(5, 10, 26, 0.7) 0%, #050a1a 100%), 
+            background: linear-gradient(180deg, rgba(5, 10, 26, 0.85) 0%, #050a1a 100%), 
                         url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -42,6 +42,9 @@
         .bg-cyan-neon {
             background-color: #00f2ff;
         }
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4));
+        }
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -59,9 +62,13 @@
 <body class="antialiased">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-bebas tracking-tighter">
-            TIEL<span class="text-cyan-neon">DESIGN</span>
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-3 flex justify-between items-center transition-all duration-300" id="main-nav">
+        <div class="flex items-center gap-2">
+            <img src="https://raw.githubusercontent.com/mvinicyus/tieldesign/134d34a28187a4958f173b5430e8cc78bb40d0cf/td-logo.png" 
+                 alt="Tiel Design Logo" class="h-10 w-auto">
+            <div class="text-xl font-bebas tracking-tighter hidden sm:block">
+                TIEL<span class="text-cyan-neon">DESIGN</span>
+            </div>
         </div>
         <div class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
             <a href="#servicos" class="hover:text-cyan-neon transition">Serviços</a>
@@ -69,14 +76,18 @@
             <a href="#contato" class="hover:text-cyan-neon transition">Contato</a>
         </div>
         <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Olá, quero saber mais sobre as artes!" 
-           class="bg-cyan-neon text-black px-4 py-2 rounded font-bold text-xs uppercase hover:bg-white transition">
-            Orçamento Express
+           class="bg-cyan-neon text-black px-5 py-2 rounded font-bold text-xs uppercase hover:bg-white transition flex items-center gap-2">
+            <i class="fa-solid fa-bolt"></i> Orçamento
         </a>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-gradient h-screen flex flex-col justify-center items-center text-center px-4">
-        <h1 class="text-6xl md:text-8xl mb-4 animate-fade-in-down">
+        <!-- Logo Central do Hero -->
+        <img src="https://raw.githubusercontent.com/mvinicyus/tieldesign/134d34a28187a4958f173b5430e8cc78bb40d0cf/td-logo.png" 
+             alt="Tiel Design Principal" class="h-32 md:h-48 w-auto mb-8 logo-glow animate-pulse">
+        
+        <h1 class="text-6xl md:text-8xl mb-4 font-bebas">
             DESIGN <span class="text-cyan-neon">ESPORTIVO</span> PROFISSIONAL
         </h1>
         <p class="text-gray-300 max-w-2xl text-lg md:text-xl mb-8 font-light italic">
@@ -84,11 +95,11 @@
         </p>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="#planos" class="bg-white text-black px-8 py-4 rounded-full font-bold uppercase hover:bg-cyan-neon transition">
-                Ver Catálogo de Preços
+                Ver Tabela de Preços
             </a>
             <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Vim pelo site e quero fechar um pacote" 
-               class="border border-white/30 backdrop-blur-sm px-8 py-4 rounded-full font-bold uppercase hover:bg-white/10 transition">
-                <i class="fa-brands fa-whatsapp mr-2"></i> Chamar Itiel
+               class="border border-white/30 backdrop-blur-sm px-8 py-4 rounded-full font-bold uppercase hover:bg-white/10 transition flex items-center">
+                <i class="fa-brands fa-whatsapp mr-2 text-xl text-[#25d366]"></i> Falar com Itiel
             </a>
         </div>
     </section>
@@ -97,11 +108,10 @@
     <section id="servicos" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl mb-2">SERVIÇOS <span class="text-cyan-neon">AVULSOS</span></h2>
-            <p class="text-gray-400 uppercase tracking-widest text-sm">Qualidade profissional em cada pixel</p>
+            <p class="text-gray-400 uppercase tracking-widest text-sm">Qualidade profissional em cada detalhe</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Item 1 -->
             <div class="card-glass p-8 rounded-2xl text-center">
                 <div class="text-cyan-neon text-4xl mb-4"><i class="fa-solid fa-running"></i></div>
                 <h3 class="text-2xl mb-2">Flyer Jogador</h3>
@@ -110,7 +120,6 @@
                 <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Olá! Quero um Flyer de Jogador" class="block w-full py-3 border border-cyan-neon/30 text-cyan-neon rounded hover:bg-cyan-neon hover:text-black transition font-bold uppercase text-xs">Pedir Agora</a>
             </div>
 
-            <!-- Item 2 -->
             <div class="card-glass p-8 rounded-2xl text-center border-cyan-neon/40 bg-white/5">
                 <div class="text-cyan-neon text-4xl mb-4"><i class="fa-solid fa-calendar-check"></i></div>
                 <h3 class="text-2xl mb-2">Kit Pré/Pós Jogo</h3>
@@ -119,7 +128,6 @@
                 <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Olá! Quero o Kit Pré e Pós Jogo" class="block w-full py-3 bg-cyan-neon text-black rounded hover:bg-white transition font-bold uppercase text-xs">Mais Vendido</a>
             </div>
 
-            <!-- Item 3 -->
             <div class="card-glass p-8 rounded-2xl text-center">
                 <div class="text-cyan-neon text-4xl mb-4"><i class="fa-solid fa-list-ul"></i></div>
                 <h3 class="text-2xl mb-2">Agenda de Jogos</h3>
@@ -134,16 +142,15 @@
     <section id="planos" class="py-20 bg-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl mb-2 text-cyan-neon">PLANOS MENSAIS E PACOTES</h2>
-                <p class="text-gray-400 uppercase tracking-widest text-sm">Economia e recorrência para sua marca</p>
+                <h2 class="text-4xl md:text-5xl mb-2 text-cyan-neon uppercase">Contratos Mensais</h2>
+                <p class="text-gray-400 uppercase tracking-widest text-sm">A solução definitiva para o seu Marketing</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                <!-- Pacote 5 -->
                 <div class="card-glass p-8 rounded-2xl text-center order-2 lg:order-1">
                     <h3 class="text-3xl mb-1">Pack 05 Artes</h3>
                     <p class="text-gray-400 mb-6">Flexibilidade total</p>
-                    <div class="text-4xl font-bebas mb-6">R$ 50,00</div>
+                    <div class="text-4xl font-bebas mb-6 text-cyan-neon">R$ 50,00</div>
                     <ul class="text-left text-sm text-gray-300 space-y-3 mb-8">
                         <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Alta resolução</li>
                         <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Formato Feed/Stories</li>
@@ -152,11 +159,10 @@
                     <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Quero fechar o pacote de 5 artes" class="block py-4 border border-white/20 rounded font-bold uppercase text-xs hover:bg-white/10 transition">Garantir Pacote</a>
                 </div>
 
-                <!-- Plano Mensal (Destaque) -->
                 <div class="bg-gradient-to-b from-[#00f2ff] to-[#00a2ff] p-1 rounded-2xl shadow-[0_0_50px_rgba(0,242,255,0.2)] order-1 lg:order-2 scale-105">
                     <div class="bg-[#050a1a] p-8 rounded-2xl text-center h-full">
-                        <span class="bg-cyan-neon text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">Recomendado</span>
-                        <h3 class="text-4xl mb-1 text-cyan-neon">PLANO MENSAL</h3>
+                        <span class="bg-cyan-neon text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-tighter">Plano Premium</span>
+                        <h3 class="text-4xl mb-1 text-cyan-neon uppercase">PLANO MENSAL</h3>
                         <p class="text-gray-400 mb-6 italic">Gestão Visual Completa</p>
                         <div class="text-6xl font-bebas mb-2 text-white">R$ 180,00</div>
                         <p class="text-xs text-gray-500 mb-8 uppercase tracking-widest">Suporte Mensal Prioritário</p>
@@ -164,21 +170,20 @@
                             <li><i class="fa-solid fa-star text-cyan-neon mr-2"></i> Artes Pré e Pós Jogos</li>
                             <li><i class="fa-solid fa-star text-cyan-neon mr-2"></i> Datas Comemorativas</li>
                             <li><i class="fa-solid fa-star text-cyan-neon mr-2"></i> Agenda de Jogos</li>
-                            <li><i class="fa-solid fa-star text-cyan-neon mr-2"></i> Apresentação de Jogadores</li>
+                            <li><i class="fa-solid fa-star text-cyan-neon mr-2"></i> Apresentação de Atletas</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Quero assinar o Plano Mensal" class="block py-5 bg-cyan-neon text-black rounded-xl font-black uppercase text-sm hover:scale-105 transition shadow-lg">Quero Fechar Agora</a>
+                        <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Quero assinar o Plano Mensal" class="block py-5 bg-cyan-neon text-black rounded-xl font-black uppercase text-sm hover:scale-105 transition shadow-lg">Quero Assinar</a>
                     </div>
                 </div>
 
-                <!-- Pacote 10 -->
                 <div class="card-glass p-8 rounded-2xl text-center order-3">
                     <h3 class="text-3xl mb-1">Pack 10 Artes</h3>
-                    <p class="text-gray-400 mb-6">Melhor Custo-Benefício</p>
-                    <div class="text-4xl font-bebas mb-6">R$ 80,00</div>
+                    <p class="text-gray-400 mb-6">Volume e Estratégia</p>
+                    <div class="text-4xl font-bebas mb-6 text-cyan-neon">R$ 80,00</div>
                     <ul class="text-left text-sm text-gray-300 space-y-3 mb-8">
-                        <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Apenas R$ 8,00 por arte</li>
                         <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Identidade Visual Única</li>
-                        <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Ideal para redes sociais</li>
+                        <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Ideal para Redes Sociais</li>
+                        <li><i class="fa-solid fa-check text-cyan-neon mr-2"></i> Desconto por unidade</li>
                     </ul>
                     <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Quero fechar o pacote de 10 artes" class="block py-4 border border-white/20 rounded font-bold uppercase text-xs hover:bg-white/10 transition">Garantir Pacote</a>
                 </div>
@@ -187,52 +192,63 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contato" class="py-12 border-t border-white/10 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div>
-                <div class="text-3xl font-bebas mb-2">TIEL<span class="text-cyan-neon">DESIGN</span></div>
-                <p class="text-gray-500 text-sm">O design que o seu talento merece.</p>
+    <footer id="contato" class="py-16 border-t border-white/10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <img src="https://raw.githubusercontent.com/mvinicyus/tieldesign/134d34a28187a4958f173b5430e8cc78bb40d0cf/td-logo.png" 
+                     alt="Tiel Design Footer" class="h-16 w-auto opacity-80">
+                <div>
+                    <div class="text-2xl font-bebas mb-1">TIEL<span class="text-cyan-neon">DESIGN</span></div>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest">O design que o seu talento merece.</p>
+                </div>
             </div>
-            <div class="flex gap-6 text-2xl">
-                <a href="https://instagram.com/_tieldesign" class="hover:text-cyan-neon transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=5511912944792" class="hover:text-cyan-neon transition"><i class="fa-brands fa-whatsapp"></i></a>
+            
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bebas text-xl text-gray-400">Social</h4>
+                <div class="flex gap-6 text-3xl">
+                    <a href="https://instagram.com/_tieldesign" target="_blank" class="hover:text-cyan-neon transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5511912944792" class="hover:text-cyan-neon transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
+
             <div class="text-sm text-gray-500">
-                <p>(11) 91294-4792</p>
-                <p>itiel.design@contato.com</p>
+                <h4 class="font-bebas text-xl text-gray-400 mb-2">Contato</h4>
+                <p><i class="fa-solid fa-phone mr-2"></i>(11) 91294-4792</p>
+                <p><i class="fa-solid fa-at mr-2"></i>itiel.design@contato.com</p>
             </div>
         </div>
-        <div class="mt-12 text-center text-[10px] text-gray-700 uppercase tracking-widest">
-            © 2026 Tiel Design - Developed for Champions.
+        <div class="mt-16 text-center text-[10px] text-gray-700 uppercase tracking-[0.3em]">
+            © 2026 Tiel Design - Developed for Sports Excellence.
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
+    <!-- Botão WhatsApp Flutuante -->
     <a href="https://api.whatsapp.com/send?phone=5511912944792&text=Olá Itiel! Vi seu site e quero falar sobre artes esportivas." 
-       class="whatsapp-float bg-[#25d366] w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition">
+       class="whatsapp-float bg-[#25d366] w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 transition border-2 border-white/20"
+       target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Efeito suave ao clicar nos links da navbar
+            // Scroll suave
             $('nav a').on('click', function(e) {
                 if (this.hash !== "") {
                     e.preventDefault();
                     var hash = this.hash;
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top - 80
+                        scrollTop: $(hash).offset().top - 70
                     }, 800);
                 }
             });
 
-            // Adicionar background na navbar ao dar scroll
+            // Ajuste da Navbar ao scroll
             $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('nav').addClass('bg-black shadow-2xl py-3');
+                if ($(this).scrollTop() > 100) {
+                    $('#main-nav').addClass('py-2 bg-black shadow-2xl');
                 } else {
-                    $('nav').removeClass('bg-black shadow-2xl py-3');
+                    $('#main-nav').removeClass('py-2 bg-black shadow-2xl');
                 }
             });
         });
